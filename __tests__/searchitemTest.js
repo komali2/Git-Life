@@ -10,9 +10,19 @@ describe('SearchItem', () => {
   const searchitem = TestUtils.renderIntoDocument(
     <SearchItem />
   );
+  var renderer = TestUtils.createRenderer();
+  renderer.render(<SearchItem />);
+  var subject = renderer.getRenderOutput();
 
+
+  const test2 = TestUtils.renderIntoDocument(<div />);
+
+  const testMe = TestUtils.isDOMComponent(test2);
+  it('is of type div', () => {
+    expect(subject.type).toBe('div');
+  })
   it('exists', () => {
-    expect(searchitem).toBeDefined();
+    expect(subject).toBeDefined();
   });
 
 })
