@@ -1,15 +1,18 @@
-jest.unmock('../client/components/searchbar.js');
+jest.unmock('../client/components/searchitem.js');
 
 import React from 'react';
 import ReactDOM from 'react';
 import TestUtils from 'react-addons-test-utils';
-import SearchBar from '../client/components/searchbar.js';
+import SearchItem from '../client/components/searchitem.js';
 
 
-describe('SearchBar', () => {
-  const searchbar = TestUtils.renderIntoDocument(
-    <SearchBar />
+describe('SearchItem', () => {
+  const searchitem = TestUtils.renderIntoDocument(
+    <SearchItem />
   );
 
-  expect(searchbar).toBeDefined();
+  it('exists', () => {
+    expect(searchitem).toBeDefined();
+  });
+
 })
