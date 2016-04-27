@@ -4,7 +4,7 @@
   "description": "An effective way to find and contribute to repos you're interested in",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "clean": "rm -rf dist",
     "webpack-prod": "NODE_ENV=production webpack --progress -p",
     "webpack-dev": "NODE_ENV=development webpack --progress",
@@ -13,6 +13,13 @@
     "prestart": "npm run clean && npm run webpack-prod",
     "start": "npm run server-prod",
     "dev": "npm run clean && npm run webpack-dev && npm run server-dev"
+  },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils"
+    ]
   },
   "repository": {
     "type": "git",
